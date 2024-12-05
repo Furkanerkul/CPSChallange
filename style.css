@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', sans-serif;
+    position: relative;
+}
+
+body .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    top: 150px;
+}
+
+
+body .tiklamaAlani{
+    background-color: rgb(59, 51, 51);
+    height: 400px;
+    width: 600px;
+    cursor: crosshair;
+    border-radius: 20px;
+}
+
+body .container input[type="text"]{
+    outline: 0;
+    bottom: 10px;
+}
+
+
+body .controls{
+    display: flex;
+    gap: 10px;
+}
+
+body .controls button{
+    bottom: 10px;
+    width: 100px;
+    background-color: green;
+    color: white;
+    border-color: transparent;
+    padding: 3px;
+}
+
+body .controls button:hover{
+    cursor: pointer;
+}
+
+body .container h3{
+    top: 20px;
+}
+
+body .container h4{
+    top: 30px;
+}
+
+
+body .container #sure{
+    top: 40px;
+}
