@@ -32,6 +32,10 @@ body .controls{
     gap: 10px;
 }
 
+body #warning{
+    display: none;
+}
+
 body .controls button{
     bottom: 10px;
     width: 100px;
@@ -56,4 +60,17 @@ body .container h4{
 
 body .container #sure{
     top: 40px;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width: 500px){ /* Siteye bağlanan cihazın genişliği 500px veya altında ise.*/
+    body .container{
+        display: none;
+    }
+
+    body #warning{
+        display: block;
+    }
 }
