@@ -1,6 +1,7 @@
 let saniye = 11;
 let skor = 0;
 let challange = parseInt(Math.random() * 100);
+let cps = 0.0;
 
 // 1. Butona basıldığı zaman rastgele bir sayı olusturulacak ve saniyemiz (10sec) olarak başlayacak ve Interval metodu ile her saniye azalacak
 // 2. Bir tane tıklama alanı olacak, bu alana tıklanıldığında değişkenin değeri 1 artacak. Sonrasında bir etiketin tcontent'i olarak değişkenin değeri ayarlanacak.
@@ -13,6 +14,7 @@ let h4 = document.querySelector('body .container h4')
 let sure = document.querySelector('body .container #sure')
 let skorAyar = document.querySelector('body .container input[type="text"]')
 let txtAyar = document.querySelector('body .container #txtSure')
+let cpsRekor = document.querySelector('body #cps')
 
 function arttir() {
     skor++;
@@ -21,24 +23,38 @@ function arttir() {
         alert('Kazandın.')
         location.href = 'index.html' // Kullanıcıyı index.html urlsine yönlendiriyorum.
     }
+    cps += 0.75 / 2;
+    cpsRekor.textContent = `CPS: ${cps.toPrecision(2)}`;
 }
 
-function zamaniBaslat(){
-    setInterval(function(){
+tiklamaAlan.addEventListener('mouseup', function () {
+    let timer = setInterval(function () {
+        cps -= 0.10 / 2;
+        cpsRekor.textContent = `CPS: ${cps.toPrecision(2)}`;
+        if (cps <= 0.0) {
+            clearInterval(timer)
+            cps = 0.0;
+            cpsRekor.textContent = `CPS: ${Math.abs(parseInt(cps))}`;
+        }
+    }, 1500);
+})
+
+function zamaniBaslat() {
+    setInterval(function () {
         --saniye;
         sure.textContent = `Süre: ${saniye}`
-        if(saniye == 0 && skor != challange){
+        if (saniye == 0 && skor != challange) {
             alert(`Süren bitti, belirli skorun altındasın. ${skor}. Olması gereken. ${challange}`)
             location.href = 'index.html'
         }
-        else if(saniye == 0){
+        else if (saniye == 0) {
             alert('Süren bitti.')
             location.href = 'index.html'
         }
-        else if(skor >= challange){
+        else if (skor >= challange) {
             alert(`Kazandın, belirli skorun üstündesin. ${skor}. Olması gereken ${challange}`)
         }
-    },1000);
+    }, 1000);
 }
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -51,7 +67,7 @@ skorAyar.addEventListener('keyup', function () {
 })
 
 
-txtAyar.addEventListener('keyup', function() { // Süre inputuna bir şey yazılırsa saniye değişkeninin değeri metin kutusundaki değer ile güncellenir.
+txtAyar.addEventListener('keyup', function () { // Süre inputuna bir şey yazılırsa saniye değişkeninin değeri metin kutusundaki değer ile güncellenir.
     saniye = Number(txtAyar.value)
     sure.textContent = saniye;
 })
