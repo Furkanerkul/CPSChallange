@@ -23,20 +23,20 @@ function arttir() {
         alert('Kazandın.')
         location.href = 'index.html' // Kullanıcıyı index.html urlsine yönlendiriyorum.
     }
-    cps += 0.75 / 2;
+    cps += 1 / 2;
     cpsRekor.textContent = `CPS: ${cps.toPrecision(2)}`;
 }
 
 tiklamaAlan.addEventListener('mouseup', function () {
     let timer = setInterval(function () {
-        cps -= 0.10 / 2;
+        cps -= 0.20 / 2;
         cpsRekor.textContent = `CPS: ${cps.toPrecision(2)}`;
         if (cps <= 0.0) {
             clearInterval(timer)
             cps = 0.0;
             cpsRekor.textContent = `CPS: ${Math.abs(parseInt(cps))}`;
         }
-    }, 1500);
+    }, 1000);
 })
 
 function zamaniBaslat() {

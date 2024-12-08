@@ -5,6 +5,37 @@
     position: relative;
 }
 
+::selection{
+    background-color: #87A2FF;
+    color: white;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+body{
+    overflow-x: hidden;
+}
+
 body .container{
     display: flex;
     flex-direction: column;
@@ -62,15 +93,57 @@ body .container #sure{
     top: 40px;
 }
 
+body aside{
+    float: left;
+    background-color: #3C3D37;
+    height: 150vh;
+    width: 17%;
+    color: white;
+}
+
+body footer{
+    margin-top: 40%;
+    background-color: #87A2FF;
+    height: 30vh;
+}
+
+body footer .footerContainer{
+    color: white;
+    top: 100px;
+}
+
+body footer .socialIcons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    top: 20px;
+}
+
+body aside .asideContainer{
+    top: 30px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
 
 /* RESPONSIVE */
 
 @media(max-width: 500px){ /* Siteye bağlanan cihazın genişliği 500px veya altında ise.*/
-    body .container{
+    body .container,aside{
         display: none;
     }
 
     body #warning{
         display: block;
+    }
+
+    body footer{
+        height: 100vh;
     }
 }
