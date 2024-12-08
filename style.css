@@ -101,23 +101,6 @@ body aside{
     color: white;
 }
 
-body footer{
-    margin-top: 40%;
-    background-color: #87A2FF;
-    height: 30vh;
-}
-
-body footer .footerContainer{
-    color: white;
-    top: 100px;
-}
-
-body footer .socialIcons{
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    top: 20px;
-}
 
 body aside .asideContainer{
     top: 30px;
@@ -141,9 +124,5 @@ a{
 
     body #warning{
         display: block;
-    }
-
-    body footer{
-        height: 100vh;
     }
 }
