@@ -9,3 +9,7 @@ CPS Challange
 
 # Bu projenin diğer projelerden farkı?
 - #### Diğer projeler sadece belirli bir saniye üzerinden CPS ölçümü yapmaktayken, kendi yaptığım bu projede saniyeye karşı tıklanacak skora erişmeye çalışıyoruz. Örneğin: (varsayılan olarak saniyemiz 10) 10 saniye içerisinde 50 kere tıklayın. Kullanıcı bunu opsiyonel olarak da ayarlayabilir.
+
+
+### CPS sistemi nasıl işliyor?
+- Aslında CPS algoritması düzeni diğer sitelere oran ile farklı, CPS yazılımını herhangi bir kaynak araştırmaksızın kendi tarzıma göre ayarladım.
